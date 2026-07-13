@@ -100,6 +100,40 @@
   }
   .nav-link:hover { color: var(--ink); border-color: var(--signal); }
 
+  /* SPLASH HERO */
+  .splash-hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 40px 0 32px; }
+  .splash-grid { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; flex: 1; padding: 0 48px; }
+  .splash-text { order: 2; text-align: center; }
+  .splash-headline {
+    font-family: 'League Spartan', sans-serif; font-weight: 800; font-size: clamp(24px, 2.8vw, 34px);
+    color: var(--ink); line-height: 1.2; max-width: 340px;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.85), 0 2px 6px rgba(0,0,0,0.9);
+  }
+  .splash-visual { order: 1; position: relative; display: flex; align-items: center; justify-content: center; }
+  .splash-circle { position: absolute; width: min(40vw, 520px); height: min(40vw, 520px); border-radius: 50%; background: var(--signal); opacity: 0.85; }
+  .splash-visual .db-card { position: relative; width: min(62vw, 780px); z-index: 1; }
+  .splash-word { order: 3; text-align: center; }
+  .splash-wordmark {
+    font-family: 'League Spartan', sans-serif; font-weight: 700; letter-spacing: -0.02em;
+    font-size: clamp(52px, 8vw, 128px); line-height: 0.95; color: var(--ink);
+    text-shadow: 0 2px 22px rgba(0,0,0,0.85), 0 2px 6px rgba(0,0,0,0.9);
+  }
+  .splash-wordmark span { color: var(--signal); }
+  .splash-footer { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .splash-follow { display: flex; align-items: center; gap: 8px; }
+  .splash-social { color: var(--mist); transition: color 0.2s ease; display: inline-flex; }
+  .splash-social:hover { color: var(--ink); }
+  .splash-status { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mist-dim); letter-spacing: 0.03em; }
+  .splash-follow-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mist-dim); letter-spacing: 0.03em; }
+  .splash-anim { opacity: 0; transform: translateY(18px); animation: splashIn 1.1s cubic-bezier(.22,1,.36,1) forwards; }
+  @keyframes splashIn { to { opacity: 1; transform: none; } }
+  .splash-pop { opacity: 0; transform: scale(0.4); animation: splashPop 1s cubic-bezier(.34,1.56,.64,1) forwards; }
+  @keyframes splashPop { to { opacity: 0.85; transform: scale(1); } }
+  @media (min-width: 761px) {
+    .splash-text { position: absolute; left: 13%; top: 50%; transform: translateY(-50%); text-align: left; z-index: 2; }
+    .splash-word { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); text-align: right; z-index: 2; }
+  }
+
   /* HERO */
   header.hero { padding: 72px 0 40px; text-align: center; }
   .eyebrow {
@@ -335,11 +369,10 @@
     .terminal-body { font-size: 12.5px; }
     .t-tag { width: 84px; }
   }
-  @media (prefers-reduced-motion: reduce) { .dot, .cursor { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .dot, .cursor { animation: none; } .splash-anim { opacity: 1; transform: none; animation: none; } .splash-pop { opacity: 0.85; transform: scale(1); animation: none; } }
   :focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
 
   /* DASHBOARD CARD */
-  .db-static-wrap { display: flex; justify-content: center; padding: 20px 0 0; }
   .db-card {
     position: relative; width: min(85vw, 1060px); max-width: 100%;
     aspect-ratio: 2530 / 1366;
@@ -354,6 +387,39 @@
 
 <div class="glow"></div>
 
+<section class="splash-hero">
+  <div class="splash-grid">
+    <div class="splash-text">
+      <div class="splash-anim" style="animation-delay:1.4s">
+        <p class="splash-headline">Football Intelligence - Register Now.</p>
+      </div>
+    </div>
+
+    <div class="splash-visual">
+      <div class="splash-circle splash-pop" style="animation-delay:0s"></div>
+      <div class="db-card splash-anim" style="animation-delay:0.45s">
+        <img src="dashboard.png" alt="tactica. dashboard overview">
+      </div>
+    </div>
+
+    <div class="splash-word">
+      <div class="splash-anim" style="animation-delay:0.9s">
+        <h2 class="splash-wordmark">tactica<span>.</span></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap splash-footer splash-anim" style="animation-delay:1.9s">
+    <div class="splash-status">Currently in development. Built in public, ahead of launch.</div>
+    <div class="splash-follow">
+      <a href="https://x.com/tactica02" target="_blank" rel="noopener" class="splash-social" aria-label="Follow tactica. on X">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <span class="splash-follow-label">- follow us on X</span>
+    </div>
+  </div>
+</section>
+
 <div class="wrap">
   <nav>
     <div class="logo">tactica<span>.</span></div>
@@ -361,7 +427,7 @@
   </nav>
 </div>
 
-<header class="hero">
+<header class="hero" id="mainHero">
   <div class="wrap">
     <div class="eyebrow"><span class="dot"></span> FOOTBALL INTELLIGENCE — PRE-LAUNCH</div>
 
@@ -390,12 +456,6 @@
     <div class="status-micro">Currently in development. Built in public, ahead of launch.</div>
   </div>
 </header>
-
-<div class="db-static-wrap">
-  <div class="db-card">
-    <img src="dashboard.png" alt="tactica. dashboard overview">
-  </div>
-</div>
 
 <div class="wrap"><div class="divider-line"></div></div>
 
