@@ -156,9 +156,6 @@
   .btn-secondary:hover { border-color: var(--mist); }
 
   .status-micro { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mist-dim); letter-spacing: 0.03em; }
-  .hero-visual { max-width: 960px; margin: 56px auto 0; transition: opacity 0.7s ease, transform 0.7s ease; }
-  .hero-visual img { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.6); }
-  .hero-visual.reveal-init { opacity: 0; transform: translateY(24px); }
 
   /* SECTIONS - shared */
   section { padding: 88px 0; }
@@ -338,7 +335,7 @@
     .terminal-body { font-size: 12.5px; }
     .t-tag { width: 84px; }
   }
-  @media (prefers-reduced-motion: reduce) { .dot, .cursor { animation: none; } .hero-visual.reveal-init { opacity: 1; transform: none; transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .dot, .cursor { animation: none; } }
   :focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
 </style>
 </head>
@@ -380,13 +377,6 @@
     </div>
 
     <div class="status-micro">Currently in development. Built in public, ahead of launch.</div>
-
-    <div class="hero-visual">
-      <picture>
-        <source srcset="macbook-overview.webp" type="image/webp">
-        <img src="macbook-overview-optimized.png" alt="tactica. product overview shown on a laptop screen" loading="lazy">
-      </picture>
-    </div>
   </div>
 </header>
 
@@ -596,21 +586,6 @@
   }
   runSequence();
   setInterval(runSequence, 7000);
-
-  (function() {
-    const visual = document.querySelector('.hero-visual');
-    if (!visual || !('IntersectionObserver' in window)) return;
-    visual.classList.add('reveal-init');
-    const io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          visual.classList.remove('reveal-init');
-          io.unobserve(visual);
-        }
-      });
-    }, { threshold: 0.15 });
-    io.observe(visual);
-  })();
 
   document.getElementById('waitlistForm').addEventListener('submit', function() {
     // Form posts for real to the hidden iframe below (target="mc-hidden-iframe"),
