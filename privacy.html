@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<title>tactica. | Privacy Policy</title>
+<meta name="description" content="How tactica. collects, uses, and protects personal data on tacticafootball.co.uk.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #0a0c0e;
+    --panel: rgba(255,255,255,0.035);
+    --panel-border: rgba(255,255,255,0.09);
+    --ink: #eef1f0;
+    --mist: #8b93a0;
+    --mist-dim: #565d68;
+    --signal: #a855f7;
+    --signal-dim: rgba(168,85,247,0.14);
+    --signal-glow: rgba(168,85,247,0.35);
+    --signal-light: #d8b4fe;
+    --divider: rgba(255,255,255,0.07);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  h1, h2, h3 { text-wrap: balance; }
+
+  body {
+    background: var(--void);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 20%, transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glow {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, var(--signal-dim) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+  .wrap-narrow { max-width: 720px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+
+  .skip-link {
+    position: absolute; top: -60px; left: 12px; z-index: 200;
+    background: var(--void); color: var(--ink); border: 1px solid var(--signal);
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px;
+    padding: 12px 20px; border-radius: 10px; text-decoration: none;
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus { top: 12px; }
+
+  /* PAGE NAV */
+  .page-nav { padding: 28px 0; }
+  .page-logo {
+    font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 20px;
+    color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+  }
+  .page-logo span { color: var(--signal); }
+
+  /* LEGAL CONTENT */
+  .legal-header { padding: 48px 0 8px; }
+  .legal-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: var(--signal); margin-bottom: 16px; }
+  .legal-title {
+    font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px);
+    letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 10px;
+  }
+  .legal-updated { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mist-dim); letter-spacing: 0.03em; }
+
+  .legal-body { padding: 36px 0 96px; }
+  .legal-body p { color: var(--mist); font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
+  .legal-body p strong { color: var(--ink); font-weight: 500; }
+  .legal-body h2 {
+    font-family: 'League Spartan', sans-serif; font-weight: 600; font-size: 20px;
+    letter-spacing: -0.01em; color: var(--ink); margin: 44px 0 14px;
+  }
+  .legal-body h2:first-child { margin-top: 0; }
+  .legal-body ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 0 0 16px; }
+  .legal-body li {
+    color: var(--mist); font-size: 15px; line-height: 1.7; padding-left: 20px; position: relative;
+  }
+  .legal-body li::before {
+    content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--signal);
+  }
+  .legal-body li strong { color: var(--ink); font-weight: 500; }
+  .legal-body a { color: var(--signal); text-decoration: none; }
+  .legal-body a:hover { text-decoration: underline; }
+
+  .btn-secondary {
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14.5px; color: var(--ink);
+    background: transparent; border: 1px solid var(--panel-border); padding: 13px 24px;
+    border-radius: 10px; text-decoration: none; transition: border-color 0.15s ease, transform 0.15s ease;
+    cursor: pointer; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--mist); }
+  .btn-secondary:active { transform: scale(0.98); }
+
+  footer { padding: 40px 0 56px; text-align: center; border-top: 1px solid var(--divider); position: relative; z-index: 1; }
+  footer .foot-logo { font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+  footer .foot-logo span { color: var(--signal); }
+  footer p { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--mist-dim); letter-spacing: 0.04em; }
+
+  /* COOKIE CONSENT */
+  .cookie-banner {
+    position: fixed; left: 0; right: 0; bottom: -240px; z-index: 150;
+    display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;
+    background: var(--panel); border-top: 1px solid var(--panel-border);
+    backdrop-filter: blur(20px); padding: 20px 28px;
+    transition: bottom 0.3s ease;
+  }
+  .cookie-banner.show { bottom: 0; }
+  .cookie-banner p {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mist);
+    letter-spacing: 0.02em; line-height: 1.6; max-width: 560px; margin: 0;
+  }
+  .cookie-banner p a { color: var(--signal); text-decoration: none; }
+  .cookie-banner-actions { display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0; }
+  @media (prefers-reduced-motion: reduce) { .cookie-banner { transition: none; } }
+
+  .btn-primary {
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14.5px; color: #160a24;
+    background: var(--signal); padding: 14px 26px; border-radius: 10px; text-decoration: none;
+    box-shadow: 0 8px 24px -6px var(--signal-glow); transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: none; cursor: pointer; display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -6px var(--signal-glow); }
+  .btn-primary:active { transform: translateY(0) scale(0.98); box-shadow: 0 6px 18px -6px var(--signal-glow); }
+
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <p>tactica. uses cookies to understand how the site is used. See our <a href="/privacy.html">Privacy Policy</a> for details.</p>
+  <div class="cookie-banner-actions">
+    <button type="button" class="btn-secondary" id="cookieReject">Necessary only</button>
+    <button type="button" class="btn-primary" id="cookieAccept">Accept</button>
+  </div>
+</div>
+
+<div class="glow"></div>
+
+<nav class="wrap page-nav">
+  <a href="/" class="page-logo">tactica<span>.</span></a>
+</nav>
+
+<main id="main-content">
+  <div class="wrap-narrow legal-header">
+    <div class="legal-eyebrow">PRIVACY POLICY</div>
+    <h1 class="legal-title">Privacy Policy</h1>
+    <div class="legal-updated">Last updated: 14/07/2026</div>
+  </div>
+
+  <div class="wrap-narrow legal-body">
+    <p>tactica. ("we," "us," "our") is operated by Peter Scarratt, trading as tactica. (15 The Malthouse, Taunton, TA1 1RU). This policy explains what personal data we collect through tacticafootball.co.uk, why, and what rights you have over it.</p>
+
+    <h2>What we collect</h2>
+    <p><strong>Email address</strong> — if you join our early access waitlist, we collect the email address you provide.</p>
+    <p><strong>Analytics data</strong> — if you consent to analytics cookies, we collect information about how you use this site via Google Analytics, including pages visited, approximate location (derived from IP address), device and browser type, and how you arrived at the site.</p>
+    <p>We do not collect payment information, and we do not currently require an account to use this site.</p>
+
+    <h2>Why we collect it</h2>
+    <ul>
+      <li><strong>Email address:</strong> to send you updates about tactica.'s development and launch, and, if you request it, an invite to our Discord community. We do not use your email for any other purpose, and we do not sell or share it with third parties for marketing purposes.</li>
+      <li><strong>Analytics data:</strong> to understand how people use the site and to improve it. This data is aggregated and does not identify you personally.</li>
+    </ul>
+
+    <h2>Legal basis</h2>
+    <p>Under UK GDPR, we rely on:</p>
+    <ul>
+      <li><strong>Consent</strong> — for analytics cookies (you can accept or decline these; declining doesn't affect your ability to use the site) and for joining the waitlist (you actively submit your email).</li>
+    </ul>
+
+    <h2>Who we share data with</h2>
+    <ul>
+      <li><strong>Mailchimp</strong> (The Rocket Science Group LLC, USA) — processes and stores waitlist email addresses on our behalf.</li>
+      <li><strong>Google Analytics</strong> (Google LLC, USA) — processes anonymised/aggregated usage data, only if you accept analytics cookies.</li>
+    </ul>
+    <p>Both are based in the United States.</p>
+
+    <h2>How long we keep data</h2>
+    <ul>
+      <li>Waitlist email addresses are kept until tactica. launches publicly or until you unsubscribe, whichever is sooner. You can unsubscribe at any time via the link in any email we send, or by contacting us directly.</li>
+      <li>Analytics data is retained according to Google Analytics' standard retention settings (Event Data Retention 2 Months / User Data 14 Months).</li>
+    </ul>
+
+    <h2>Your rights</h2>
+    <p>Under UK GDPR, you have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you</li>
+      <li>Correct inaccurate data</li>
+      <li>Request deletion of your data</li>
+      <li>Object to or restrict how we process your data</li>
+      <li>Request a copy of your data in a portable format</li>
+      <li>Withdraw consent at any time (this won't affect processing that already happened while consent was given)</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:tactica.footballai@gmail.com">tactica.footballai@gmail.com</a>.</p>
+
+    <h2>Cookies</h2>
+    <p>See our cookie banner for details on what cookies this site uses and to change your preference at any time. In short: we only use cookies for analytics (Google Analytics), and only after you've actively accepted them. No advertising or marketing cookies are currently used.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy as tactica. develops. Material changes will be reflected with an updated "Last updated" date above.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy or your data: <a href="mailto:tactica.footballai@gmail.com">tactica.footballai@gmail.com</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-logo">tactica<span>.</span></div>
+    <p>FOOTBALL INTELLIGENCE, BUILT ON EVIDENCE</p>
+  </div>
+</footer>
+
+<script>
+  const CONSENT_KEY = 'tactica_cookie_consent';
+
+  function loadGA() {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DH2E30FW6N';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-DH2E30FW6N');
+  }
+
+  function initConsent() {
+    const stored = localStorage.getItem(CONSENT_KEY);
+    if (stored === 'accepted') { loadGA(); return; }
+    if (stored === 'rejected') { return; }
+    // No choice made yet — show the banner
+    document.getElementById('cookieBanner').classList.add('show');
+  }
+
+  function acceptCookies() {
+    localStorage.setItem(CONSENT_KEY, 'accepted');
+    document.getElementById('cookieBanner').classList.remove('show');
+    loadGA();
+  }
+
+  function rejectCookies() {
+    localStorage.setItem(CONSENT_KEY, 'rejected');
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+
+  document.addEventListener('DOMContentLoaded', initConsent);
+  document.getElementById('cookieAccept').addEventListener('click', acceptCookies);
+  document.getElementById('cookieReject').addEventListener('click', rejectCookies);
+</script>
+
+</body>
+</html>
