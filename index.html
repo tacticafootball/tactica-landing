@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DH2E30FW6N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DH2E30FW6N');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -89,17 +98,6 @@
 
   .mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em; }
 
-  /* NAV */
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; }
-  .logo { font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; }
-  .logo span { color: var(--signal); }
-  .nav-link {
-    font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em;
-    color: var(--mist); text-decoration: none; border: 1px solid var(--panel-border);
-    padding: 9px 16px; border-radius: 100px; transition: all 0.2s ease;
-  }
-  .nav-link:hover { color: var(--ink); border-color: var(--signal); }
-
   /* SPLASH HERO */
   .splash-hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 40px 0 32px; }
   .splash-grid { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; flex: 1; padding: 0 48px; }
@@ -129,17 +127,6 @@
 
   /* HERO */
   header.hero { padding: 72px 0 40px; text-align: center; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em;
-    color: var(--signal); background: var(--signal-dim); border: 1px solid rgba(168,85,247,0.25);
-    padding: 7px 14px 7px 10px; border-radius: 100px; margin-bottom: 32px;
-  }
-  .dot {
-    width: 6px; height: 6px; border-radius: 50%; background: var(--signal);
-    box-shadow: 0 0 8px var(--signal-glow); animation: pulse 2s ease-in-out infinite;
-  }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 
   h1 {
     font-family: 'League Spartan', sans-serif; font-weight: 700; font-size: clamp(38px, 6vw, 64px);
@@ -471,17 +458,8 @@
   </div>
 </section>
 
-<div class="wrap">
-  <nav>
-    <div class="logo">tactica<span>.</span></div>
-    <a class="nav-link" href="https://x.com/tactica02" target="_blank" rel="noopener">FOLLOW ON X →</a>
-  </nav>
-</div>
-
 <header class="hero" id="mainHero">
   <div class="wrap">
-    <div class="eyebrow"><span class="dot"></span> FOOTBALL INTELLIGENCE · PRE-LAUNCH</div>
-
     <h1>Understand football first.<br><span class="fade">Predict second.</span></h1>
 
     <p class="sub">tactica. is a football intelligence platform built to turn evidence into structured, explainable analysis. <strong>Every conclusion is traced back through the reasoning that produced it</strong>, including the moments the evidence isn't strong enough to support a decision at all.</p>
